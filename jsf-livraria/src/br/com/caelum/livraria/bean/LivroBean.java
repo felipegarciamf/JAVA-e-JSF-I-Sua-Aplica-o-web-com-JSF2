@@ -7,9 +7,14 @@ import javax.faces.bean.RequestScoped;
 @RequestScoped
 public class LivroBean {
 
+	private Livro livro = new Livro();
+
 	public void gravar() {
-		System.out.println("Gravando livro");
+		System.out.println("Gravando livro " + this.livro.titulo);
 	}
-	
-	
+
+	public Livro getLivro() {
+		return livro;
+	}
+
 }
