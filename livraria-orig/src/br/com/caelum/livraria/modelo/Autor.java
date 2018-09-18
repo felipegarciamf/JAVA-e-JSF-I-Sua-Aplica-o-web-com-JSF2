@@ -9,7 +9,7 @@ public class Autor {
 
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private int id;
 	private String nome;
 
 	public String getNome() {
@@ -20,11 +20,11 @@ public class Autor {
 		this.nome = nome;
 	}
 
-	public Integer getId() {
+	public int getId() {
 		return id;
 	}
 
-	public void setId(Integer id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

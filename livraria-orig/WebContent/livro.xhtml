@@ -32,11 +32,19 @@
 			Dados do Autor
 			</legend>
 			<h:outputLabel value="Selecione Autor:" for="autor"/>
-			<h:selectOneMenu>
-				
-				<f:selectItems value="#{livroBean.autores}" var="autor" itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
+			<h:selectOneMenu value="#{livroBean.autorId}"> 
+				<f:selectItems id="autor" value="#{livroBean.autores}" var="autor" itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
 			</h:selectOneMenu>
-			<h:commandButton value="Gravar Autor" />
+			<h:commandButton value="Gravar Autor" action="#{livroBean.gravarAutor}"/>
+			
+			<h:dataTable value="#{livroBean.autoresDoLivro}" var="autor">
+				<h:column>
+					<h:outputText value="#{autor.nome}" />
+				</h:column>
+				<h:column>
+				 	<h:outputFormat value="#{autor.id}" />
+				</h:column>
+			</h:dataTable>
 		</fieldset>
 
 		<h:commandButton value="Gravar" action="#{livroBean.gravar}" />
