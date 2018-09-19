@@ -16,6 +16,13 @@ public class LivroBean {
 	private Livro livro = new Livro();
 
 	private List<Autor> autores;
+	private List<Livro> livros;
+	
+	
+	public List<Livro> getLivros() {
+		return new DAO(Livro.class).listaTodos();
+	}
+
 	private int autorId;
 
 	public Livro getLivro() {
@@ -32,6 +39,8 @@ public class LivroBean {
 		}
 
 		new DAO<Livro>(Livro.class).adiciona(this.livro);
+		
+		this.livro = new Livro();
 	}
 
 	public void setAutores(List<Autor> autores) {
