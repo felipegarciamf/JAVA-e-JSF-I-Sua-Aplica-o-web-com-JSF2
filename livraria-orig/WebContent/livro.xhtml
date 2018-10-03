@@ -73,12 +73,12 @@
 			</fieldset>
 
 			<h:commandButton value="Gravar" action="#{livroBean.gravar}">
-				<f:ajax execute="@form" render="@form :tabelaLivros" />
+				<f:ajax execute="@form" render="@form :formTabelaLivros:tabelaLivros" />
 			</h:commandButton>
 		</h:form>
 		<fieldset>
-			<h:dataTable value="#{livroBean.livros}" var="livro"
-				id="tabelaLivros">
+		<h:form id="formTabelaLivros">
+			<h:dataTable value="#{livroBean.livros}" var="livro" id="tabelaLivros">
 				<h:column>
 					<f:facet name="header">Título</f:facet>
 					<h:outputText value="#{livro.titulo}" />
@@ -98,10 +98,15 @@
 					</h:outputFormat>
 				</h:column>
 
-
+				<h:column>
+					<f:facet name="header">Remover</f:facet>
+					<h:commandLink value="remove" action="#{livroBean.remover(livro)}"/>
+				</h:column>
 			</h:dataTable>
+			</h:form>
 		</fieldset>
 	</ui:define>
+	<ui:define name="tituloRodape">Fuck this shit</ui:define>
 </ui:composition>
 
 </html>
