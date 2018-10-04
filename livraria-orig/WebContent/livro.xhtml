@@ -97,11 +97,20 @@
 						<f:convertDateTime pattern="dd/MM/YYYY HH:mm" />
 					</h:outputFormat>
 				</h:column>
+				
+				
+				<h:column>
+					<f:facet name="header">Alterar</f:facet>
+					<h:commandLink value="altera" action="#{livroBean.carregar(livro)}" />
+				</h:column>
 
 				<h:column>
 					<f:facet name="header">Remover</f:facet>
 					<h:commandLink value="remove" action="#{livroBean.remover(livro)}"/>
 				</h:column>
+				
+
+				
 			</h:dataTable>
 			</h:form>
 		</fieldset>
