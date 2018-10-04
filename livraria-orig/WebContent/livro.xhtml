@@ -64,10 +64,12 @@
 					action="#{livroBean.formAutor}" immediate="true" />
 
 
-				<h:dataTable value="#{livroBean.autoresDoLivro}" var="autor"
-					id="tabelaAutores">
+				<h:dataTable value="#{livroBean.autoresDoLivro}" var="autor" id="tabelaAutores">
 					<h:column>
 						<h:outputText value="#{autor.nome}" />
+					</h:column>
+					<h:column>
+						<h:commandLink value="X" action="#{livroBean.removerAutorDoLivro(autor)}" />
 					</h:column>
 				</h:dataTable>
 			</fieldset>

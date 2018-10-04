@@ -29,6 +29,11 @@ public class LivroBean {
 		return "autor?faces-redirect=true";
 	}
 	
+	public void removerAutorDoLivro(Autor autor) {
+		this.livro.removeAutor(autor);
+		
+	}
+	
 	public List<Livro> getLivros() {
 		return new DAO(Livro.class).listaTodos();
 	}
